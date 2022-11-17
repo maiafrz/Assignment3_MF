@@ -29,28 +29,29 @@ router.get('/add',(req,res,next)=>{
 
 });
 //post route for displaying add page
-router.post('/add',(req,res,next)=>{
-    let newBook = Book ({
-        "name":req.body.name,
-        "author":req.body.author,
-        "published":req.body.published,
-        "description":req.body.description,
-        "price":req.body.price
-    })
-    Book.create(newBook),(err,Book) => {
+router.post('/add',(req,res,next)=>
+{
+    let newBook = Book({
+        "Name":req.body.Name,
+        "Author":req.body.Author,
+        "Published":req.body.Published,
+        "Description":req.body.Description,
+        "Price":req.body.Price
+    });
+    Book.create(newBook,(err,Book) => {
         if(err)
         {
             console.log(err);
             res.end(err);
-        }else
+        }
+        else
         {
 
-            res.redirect('/book/list');
+            res.redirect('/book-list');
 
         }
-    }
-
-});
+    })
+})
 //edit operation
 //get route for displaying the edit operation -> create operation
 router.get('/edit/:id',(req,res,next)=>{
@@ -88,14 +89,14 @@ router.post('/edit/:id',(req,res,next)=>{
         }
         else
         {
-            res.redirect('/book/list')
+            res.redirect('/book-list')
         }
     });
 });
 //delete operation
 router.get('/delete/:id',(req,res,next)=>{
     let id =req.params.id;
-    Book.remove({_id:id},(err)=>{
+    Book.deleteOne({_id:id},(err)=>{
         if(err)
         {
             console.log(err);
@@ -103,7 +104,7 @@ router.get('/delete/:id',(req,res,next)=>{
         }
         else
         {
-            res.redirect('/book/list')
+            res.redirect('/book-list')
         }
     })
 

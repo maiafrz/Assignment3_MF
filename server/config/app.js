@@ -17,8 +17,8 @@ mongDB.once('open', ()=> {
   console.log('Connected to the MongoDB');
 });
 
-let indexRouter = require('../routes/index');
-let usersRouter = require('../routes/users');
+//let indexRouter = require('../routes/index');
+//let usersRouter = require('../routes/users');
 let booksRouter = require('../routes/book');
 
 let app = express();
@@ -34,8 +34,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-app.use('/', indexRouter); // localhost:3000
-app.use('/users', usersRouter); // localhost:3000/users
+//app.use('/', indexRouter); // localhost:3000
+//app.use('/users', usersRouter); // localhost:3000/users
 app.use('/book-list', booksRouter); // localhost:3000/book-list
 
 // catch 404 and forward to error 
