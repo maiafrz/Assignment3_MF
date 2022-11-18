@@ -1,0 +1,43 @@
+<%- include ("../partials/header") %>
+<%- include ("../partials/main_nav") %>
+<!-- Main Content -->
+<main>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-10">
+            <h1><%= title %></h1>
+            <a href="/task-list/add" class ="btn btn-primary" role="button">
+                <i class = "fas fa-plus-circle"></i> Add a Took </a>
+            <br>
+            <br>
+    <table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th class="text-center col-2">Task</th>
+        <th class="text-center col-2">Due</th>
+        <th class="text-center col-1">Worth</th>
+        <th class="text-center col-1"></th>
+        <th class="text-center col-1"></th>
+    </tr>
+    <!--Repeat the template-->
+    <% for(let count=0; count<Tasklist.length; count++) { %>
+        <tr>
+            <td class="text-center col-2"><%= Tasklist[count].Task%></td>
+            <td class="text-center col-2"><%= Tasklist[count].Due%></td>
+            <td class="text-center col-1"><%= Tasklist[count].Worth%></td>
+            <td class="text-center col-1">
+                <a href = "/task-LIST/edit/<%= Tasklist[count]._id %>"
+                    class ="btn btn-primary">
+                    <i class="fas fa-pencil-alt"></i> Edit </a>
+                </td>
+            <td class="text-center col-1">
+                <a href = "/task-list/delete/<%= Tasklist[count]._id %>"
+                    class ="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Delete </a>
+            </td>
+        </tr>
+    <% } %>
+    </table>
+</div>
+</div>
+</main>
+<%- include ("../partials/bottom_nav") %>
