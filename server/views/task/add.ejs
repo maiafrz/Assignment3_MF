@@ -5,9 +5,10 @@
     <div class="row">
         <div class ="offset-3 col-md-6">
             <h1><%= title %></h1>
-            <form class="form" method="post">
+            <form class="form" method="post"> //creates form that will post data
 
-                <div class="form-group">
+                //div for user to add their chosen task
+                <div class="form-group"> 
                     <label for="taskTextField">Task Title</label>
                     <input type="text" class="form-control"
                     id="taskTextField"
@@ -16,6 +17,7 @@
 
                 </div>
 
+                //div for user to add task due date
                 <div class="form-group">
                     <label for="dueTextField">Due Date</label>
                     <input type="text" class="form-control"
@@ -25,8 +27,9 @@
                     
                 </div>
 
+                //div for user to enter how much their assignment is worth
                 <div class="form-group">
-                    <label for="worthTextField">Year</label>
+                    <label for="worthTextField">Worth</label>
                     <input type="text" class="form-control"
                     id="worthTextField"
                     placeholder="Enter how much your assignment is worth"
@@ -34,10 +37,10 @@
                     
                 </div>
                 <br>
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary" type="submit"> //submit button colored blue
                     <i class="fas fa-edit"></i>Submit</button>
 
-                <a href ="/task-list" class="btn btn-warning">
+                <a href ="/task-list" class="btn btn-warning"> //cancel button colored yellow
                     <i class="fas fa-undo"></i>Cancel</a>
 
             </form>

@@ -35,7 +35,6 @@ app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter); // localhost:3000
-//app.use('/users', usersRouter); // localhost:3000/users
 app.use('/task-list', tasksRouter); 
 
 // catch 404 and forward to error 
